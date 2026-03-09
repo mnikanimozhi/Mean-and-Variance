@@ -55,7 +55,7 @@ Slot:T1-I5
 --------------------
 import numpy as np
 
-# Input: Enter the number of arrivals separated by space
+#Input: Enter the number of arrivals separated by space
 L = [int(i) for i in input("Enter arrival data: ").split()]
 N = len(L)
 M = max(L)
@@ -63,7 +63,7 @@ M = max(L)
 x = []
 f = []
 
-# Counting frequency of each arrival
+#Counting frequency of each arrival
 for i in range(M + 1):
     c = 0
     for j in range(N):
@@ -74,16 +74,16 @@ for i in range(M + 1):
 
 sf = np.sum(f)
 
-# Calculating probability for each occurrence
+#Calculating probability for each occurrence
 p = [f[i] / sf for i in range(M + 1)]
 
-# Mean of arrival (expected value)
+#Mean of arrival (expected value)
 mean = np.inner(x, p)
 
-# Second moment (E[X²])
+#Second moment (E[X²])
 EX2 = np.inner(np.square(x), p)
 
-# Variance and standard deviation
+#Variance and standard deviation
 var = EX2 - mean**2
 SD = np.sqrt(var)
 
