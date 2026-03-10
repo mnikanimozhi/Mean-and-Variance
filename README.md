@@ -53,31 +53,54 @@ Name: KANIMOZHI K N
 Reg no: 212225230126
 Slot:T1-I5
 --------------------
-#Mean and Variance of a Discrete Distribution
+import numpy as np
 
-#input values
-x = list(map(float, input("Enter values of X (space-separated): ").split()))
+#Input: Enter the number of arrivals separated by space
 
-p = list(map(float, input("Enter corresponding probabilities (space-separated): ").split()))
+L = [int(i) for i in input("Enter arrival data: ").split()]
 
-#check validity
+N = len(L)
 
-if len(x) != len(p):
-    print("Error: X and P must have same length")
+M = max(L)
 
-else:
-    # mean
-    mean = 0
-    for i in range(len(x)):
-        mean += x[i] * p[i]
+x = []
 
-   #variance
-    variance = 0
-    for i in range(len(x)):
-        variance += ((x[i] - mean) ** 2) * p[i]
+f = []
 
-   print(f"Mean ={mean:.2f}")
-    print("Variance =", variance)
+#Counting frequency of each arrival
+for i in range(M + 1):
+    c = 0
+    for j in range(N):
+        if L[j] == i:
+            c += 1
+    f.append(c)
+    x.append(i)
+
+sf = np.sum(f)
+
+#Calculating probability for each occurrence
+
+p = [f[i] / sf for i in range(M + 1)]
+
+#Mean of arrival (expected value)
+
+mean = np.inner(x, p)
+
+#Second moment (E[X²])
+
+EX2 = np.inner(np.square(x), p)
+
+#Variance and standard deviation
+
+var = EX2 - mean**2
+
+SD = np.sqrt(var)
+
+print(f"The Mean arrival rate is {mean:.3f}")
+
+print(f"The Variance of arrival from feeder is {var:.3f}")
+
+print(f"The Standard deviation of arrival from feeder is {SD:.3f}")
 
 #Output : 
 
