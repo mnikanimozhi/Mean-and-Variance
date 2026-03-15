@@ -53,6 +53,7 @@ Name: KANIMOZHI K N
 Reg no: 212225230126
 Slot:T1-I5
 --------------------
+```
 import numpy as np
 
 #Input: Enter the number of arrivals separated by space
@@ -101,6 +102,7 @@ print(f"The Mean arrival rate is {mean:.3f}")
 print(f"The Variance of arrival from feeder is {var:.3f}")
 
 print(f"The Standard deviation of arrival from feeder is {SD:.3f}")
+```
 
 # Output : 
 
