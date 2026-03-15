@@ -45,7 +45,7 @@ It shows the distance of a random variable from its mean. It is calcualted as
 Name: KANIMOZHI K N
 Reg no: 212225230126
 Slot:T1-I5
---------------------
+
 ```
 import numpy as np
 #Input: Enter the number of arrivals separated by space
@@ -76,7 +76,6 @@ print(f"The Mean arrival rate is {mean:.3f}")
 print(f"The Variance of arrival from feeder is {var:.3f}")
 print(f"The Standard deviation of arrival from feeder is {SD:.3f}")
 ```
-
 # Output : 
 
 <img width="564" height="110" alt="image" src="https://github.com/user-attachments/assets/9741b9f8-03a8-47de-8ce8-068ff65e1021" />
